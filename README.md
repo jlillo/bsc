@@ -63,7 +63,7 @@ If you use ***bsc***, please give credit to the following paper:
 Lillo-Box, J.; Barrado, D.; Bouy, H. (2014, A&A, 566, 103) "High-resolution imaging of Kepler planet host candidates. A comprehensive comparison of different techniques",  [ADS link](https://ui.adsabs.harvard.edu/abs/2014A%26A...566A.103L/abstract)
 
 and add the following sentence somewhere in the paper (either footnote or acknowledgements section):
- > This work made use of \texttt{bsc} by J. Lillo-Box (publicly available in www.github.com/jlillo/bsc), which also made use of the python package \texttt{astrobase}.
+ > This work made use of \texttt{bsc} by J. Lillo-Box (publicly available in \url{www.github.com/jlillo/bsc}), which also made use of the python package \texttt{astrobase}.
 
 
 ## Papers using tpfplotter
