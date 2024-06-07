@@ -36,6 +36,27 @@ from astroquery.mast import Catalogs
 import jlillo_pypref
 
 
+def cli():
+    """command line inputs
+
+    Get parameters from command line
+
+    Returns
+    -------
+    Arguments passed by command line
+    """
+    parser = argparse.ArgumentParser()
+    parser.add_argument("object", help="Host name resolvable with Simbad")
+    parser.add_argument("planet", help="Planet ID: b, c, d, etc.")
+    parser.add_argument("depth", help="Transit depth of the planet in ppm")
+    parser.add_argument("inst", help="Instrument ID: Instrument_Filter")
+    parser.add_argument("file", help="Contrast file with sep,contrast columns")
+    parser.add_argument("-C", "--COORD", help="Use coordinates", default=False)
+    parser.add_argument("-M", "--MAG", help="Reference magnitude (Tmag/Gmag)")
+    args = parser.parse_args()
+    return args
+
+
 def get_coord(tic):
     """
     Get TIC corrdinates
@@ -198,8 +219,8 @@ def get_sensitivity(t):
     	dist_arr = dist_arr[:-1]
     	sens = sens[:-1]
 
-    for i in range(len(dist_arr)):
-        print(dist_arr[i],-1.*sens[i])
+    # for i in range(len(dist_arr)):
+    #     print(dist_arr[i],-1.*sens[i])
 
     return dist_arr,-1.*sens
 
@@ -224,7 +245,7 @@ def BSC(host,planet,ra,dec,depth,inst,kepmag,file_contrast):
         table_cont = np.load(file_contrast)
         sep,s3 = get_sensitivity(table_cont)
     else:
-        table_cont = np.genfromtxt(file_contrast)
+        table_cont = np.genfromtxt(file_contrast,dtype=None,encoding='utf-8')
         sep,s3 = table_cont[:,0], -1.*table_cont[:,1]
 
     max_sep = np.max(sep) # arcsec
@@ -405,7 +426,8 @@ def BSC(host,planet,ra,dec,depth,inst,kepmag,file_contrast):
 
 
     path = os.path.dirname(file_contrast)
-    plt.savefig(path+'/'+host+planet+'_'+inst+'_EBlimits.pdf')
+    if len(path) == 0: path='./'
+    plt.savefig(os.path.join(path,host+planet+'_'+inst+'_EBlimits.pdf'))
     plt.close()
 
     return PrAstraLux
@@ -415,28 +437,6 @@ def BSC(host,planet,ra,dec,depth,inst,kepmag,file_contrast):
 
 
 if __name__ == '__main__':
-
-    def cli():
-        """command line inputs
-
-        Get parameters from command line
-
-        Returns
-        -------
-        Arguments passed by command line
-        """
-        parser = argparse.ArgumentParser()
-        parser.add_argument("object", help="Host name resolvable with Simbad")
-        parser.add_argument("planet", help="Planet ID: b, c, d, etc.")
-        parser.add_argument("depth", help="Transit depth of the planet in ppm")
-        parser.add_argument("inst", help="Instrument ID: Instrument_Filter")
-        parser.add_argument("file", help="Contrast file with sep,contrast columns")
-        parser.add_argument("-C", "--COORD", help="Use coordinates", default=False)
-        parser.add_argument("-M", "--MAG", help="Reference magnitude (Tmag/Gmag)")
-        args = parser.parse_args()
-        return args
-
-
 
     print('=====================================')
     print('     Blended Source Confidence       ')
