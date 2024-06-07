@@ -45,7 +45,7 @@ Optional inputs:
 To run the code:
 
 ```
-python bsc.py TOI-2128 b 372 AstraLux_SDSSz TOI-2128_1_SDSSz__000_0100__Sensitivity.npz --MAG 6.68
+python bsc.py TOI-2128 b 372 AstraLux_SDSSz examples/TOI-2128_1_SDSSz__000_0100__Sensitivity.npz --MAG 6.68
 ```
 
 This will return a probability of a blended source capable of mimicking the transit of TOI-2128.01 of 0.034%. 
