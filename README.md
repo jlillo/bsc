@@ -3,6 +3,7 @@
  blended stellar companion up to a contrast magnitude that can mimic 
  your planetary transit. This code provides paper-ready figures and 
  the probability that your source is isolated from threatening sources.
+ The explanation on how this is done can be found in [Lillo-Box et al. 2014](https://ui.adsabs.harvard.edu/abs/2014A%26A...566A.103L/abstract)
 
  ![alt text](https://github.com/jlillo/bsc/blob/f9a6791c17c88f844a1977fc9130205cea68cc4f/logo_bsc.png.001.png)
 
@@ -55,4 +56,20 @@ contrast a blended source could have to be able to mimic the planetary transity 
 and the contrast curve. 
 
 ![alt text](https://github.com/jlillo/bsc/blob/1da025b550f353ec6611f968894dc86d6ec126d6/TOI-2128b_AstraLux_SDSSz_EBlimits.jpg)
+
+## Credits
+If you use ***bsc***, please give credit to the following paper:
+
+Lillo-Box, J.; Barrado, D.; Bouy, H. (2014, A&A, 566, 103) "High-resolution imaging of Kepler planet host candidates. A comprehensive comparison of different techniques",  [ADS link](https://ui.adsabs.harvard.edu/abs/2014A%26A...566A.103L/abstract)
+
+and add the following sentence somewhere in the paper (either footnote or acknowledgements section):
+ > This work made use of \texttt{bsc} by J. Lillo-Box (publicly available in www.github.com/jlillo/bsc), which also made use of the python package \texttt{astrobase}.
+
+
+## Papers using tpfplotter
+Several papers have already used ***bsc**. Some examples are:
+
+- Lillo-Box, et al., (2014), [ADS link](https://ui.adsabs.harvard.edu/abs/2014A%26A...566A.103L/abstract)
+- Lillo-Box, et al., (2024), [ADS link](https://ui.adsabs.harvard.edu/abs/2024arXiv240406316L/abstract)
+- Bluhm, et al., (2020), A&A, 639, A132. [ADS link](https://ui.adsabs.harvard.edu/abs/2020A&A...639A.132B)
 
