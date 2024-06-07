@@ -54,5 +54,5 @@ probability is claculated as the integral of the space beween the horizontal lin
 contrast a blended source could have to be able to mimic the planetary transity if it is an eclipsing binary)
 and the contrast curve. 
 
-![alt text](https://github.com/jlillo/bsc/blob/master/TOI-2128b_AstraLux_SDSSz_EBlimits.jpg)
+![alt text](https://github.com/jlillo/bsc/blob/1da025b550f353ec6611f968894dc86d6ec126d6/TOI-2128b_AstraLux_SDSSz_EBlimits.jpg)
 
